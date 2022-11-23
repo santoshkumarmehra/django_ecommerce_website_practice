@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container ">
+  <div class="border rounded solid red mt-3 mb-2 ms-0 me-0">
+    <table class="table table-danger  mt-3">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">title</th>
+          <th scope="col">User</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Transaction_id</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+      <tbody class="table table-info mt-3">
+          {% for product in products %}
+          <tr>
+            <td>{{product.id}}</td>
+            <td>{{product.product.title}}</td>
+              <td>{{product.user}}</td>
+              <td>{{product.quantity}}</td>
+              <td>{{product.transaction_id}}</td>
+              <td>{{product.product.selling_price}}</td>
+          </tr>
+          {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+    
+
+
+
+
+{% endblock content %}
